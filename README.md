@@ -11,4 +11,5 @@ Code for basic 90 minutes presentation.
 > [!TIP]
 > To test your Certora installation, run the following from the repository's
 > root dir:
+> 
 > `certoraRun certora/confs/VotingBug.conf`
