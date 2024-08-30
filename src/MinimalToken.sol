@@ -12,7 +12,7 @@ contract MinimalToken {
         _transfer(msg.sender, recipient, amount);
         return true;
     }
-    
+
     function transferFrom(
         address sender,
         address recipient,
@@ -26,7 +26,7 @@ contract MinimalToken {
 
         return true;
     }
-    
+
     function _transfer(
         address sender,
         address recipient,
@@ -36,16 +36,16 @@ contract MinimalToken {
 
         uint256 senderBalance = balanceOf[sender];
         require(senderBalance >= amount, "Transfer exceeds balance");
-        
+
         balanceOf[sender] = senderBalance - amount;
         balanceOf[recipient] += amount;
     }
-    
+
     function approve(address spender, uint256 amount) public returns (bool) {
         _approve(msg.sender, spender, amount);
         return true;
     }
-    
+
     function _approve(
         address owner,
         address spender,

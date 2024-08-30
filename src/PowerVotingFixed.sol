@@ -9,7 +9,7 @@ contract PowerVoting {
     MinimalToken public token;
 
     bool public isVotingEnded;
-    
+
     // How much was transferred when voting
     mapping(address => uint256) amountVoted;
 
@@ -39,7 +39,7 @@ contract PowerVoting {
         // Take the money to prevent voting twice with it
         token.transferFrom(msg.sender, address(this), power);
         amountVoted[msg.sender] += power;
-        
+
         if (isInFavor) {
             votesInFavor += power;
         } else {

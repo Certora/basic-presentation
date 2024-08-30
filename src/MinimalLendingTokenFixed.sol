@@ -19,7 +19,7 @@ contract MinimalToken {
     function flashLoan(uint256 amount) public {
         uint256 preBalance = address(this).balance;
         require(preBalance >= amount, "Insufficient funds");
-        
+
         IFlashLoanReceiver(msg.sender).execute{value: amount}(); 
 
         uint256 postBalance = address(this).balance;
@@ -30,7 +30,7 @@ contract MinimalToken {
         _transfer(msg.sender, recipient, amount);
         return true;
     }
-    
+
     function transferFrom(
         address sender,
         address recipient,
@@ -44,7 +44,7 @@ contract MinimalToken {
 
         return true;
     }
-    
+
     function _transfer(
         address sender,
         address recipient,
@@ -54,16 +54,16 @@ contract MinimalToken {
 
         uint256 senderBalance = balanceOf[sender];
         require(senderBalance >= amount, "Transfer exceeds balance");
-        
+
         balanceOf[sender] = senderBalance - amount;
         balanceOf[recipient] += amount;
     }
-    
+
     function approve(address spender, uint256 amount) public returns (bool) {
         _approve(msg.sender, spender, amount);
         return true;
     }
-    
+
     function _approve(
         address owner,
         address spender,
