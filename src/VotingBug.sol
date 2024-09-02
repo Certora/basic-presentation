@@ -12,6 +12,7 @@ contract Voting {
     uint256 public totalVotes;  // Total number voted
 
     function vote(bool isInFavor) external {
+        // The prover ignores reverted computation paths
         require(!hasVoted[msg.sender]);
         hasVoted[msg.sender] = true;
 

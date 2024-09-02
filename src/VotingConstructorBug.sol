@@ -11,6 +11,10 @@ contract Voting {
     uint256 public votesAgainst;  // How many opposed
     uint256 public totalVotes;  // Total number voted
 
+    constructor() {
+      votesInFavor = 1;  // NOTE: injected bug
+    }
+
     function vote(bool isInFavor) external {
         // The prover ignores reverted computation paths
         require(!hasVoted[msg.sender]);
