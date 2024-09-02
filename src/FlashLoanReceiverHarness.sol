@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 
 import {IFlashLoanReceiver, MinimalToken} from "./MinimalLendingTokenFixed.sol";
-import {PowerVoting} from "./PowerVotingFixed.sol";
+import {PowerVoting} from "./PowerVoting.sol";
 
 // A contract that may do anything.
 // We use the Provver's over-approximation of storage for enabling any possible action.

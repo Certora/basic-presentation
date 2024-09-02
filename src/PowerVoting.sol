@@ -28,9 +28,10 @@ contract PowerVoting {
         isVotingEnded = true;
     }
 
-    function vote(bool isInFavor) public {
+    function vote(bool isInFavor) external {
         require(!isVotingEnded, "Voting ended");
         require(!hasVoted[msg.sender]);
+        require(msg.sender != address(this), "Self voting");
         hasVoted[msg.sender] = true;
 
         uint256 power = token.balanceOf(msg.sender);

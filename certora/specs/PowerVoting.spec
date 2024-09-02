@@ -8,7 +8,7 @@ methods {
     function votesInFavor() external returns (uint256) envfree;
     function votesAgainst() external returns (uint256) envfree;
 
-    // Declares function so can be called from the spec via, token.balanceOf(a) 
+    // Declares function so can be called from the spec via, `token.balanceOf(a)`
     function MinimalToken.balanceOf(address) external returns (uint256) envfree;
 }
 
