@@ -11,5 +11,5 @@ invariant noBalanceAddressZero()
 
 
 /// @title Total supply not greater than ETH balance
-invariant totalSupplyLEBalance()
+invariant tokenSolvency()
     nativeBalances[currentContract] >= totalSupply();
