@@ -14,5 +14,3 @@ Code for basic 90 minutes presentation.
 > 
 > `certoraRun certora/confs/VotingBug.conf`
 
-
-TEST TEST REMOVE ME AGAIN
