@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 
-import {IFlashLoanReceiver, MinimalToken} from "./MinimalLendingTokenFixed.sol";
+import {IFlashLoanReceiver, MinimalToken} from "./MinimalLendingToken.sol";
 import {PowerVoting} from "./PowerVoting.sol";
 
 // A contract that may do anything.
