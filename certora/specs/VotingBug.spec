@@ -5,10 +5,10 @@ methods {
 }
 
 /// @title Integrity of vote
-rule voteIntegrity(bool isInFavor) {
+rule voteIntegrity(env e) {
     uint256 votedBefore = totalVotes();
 
-    env e;
+    bool isInFavor;
     vote(e, isInFavor);
 
     assert (

@@ -7,21 +7,14 @@ methods {
 }
 
 /// @title Total votes is sum of in favor and against
-rule totalVotesIsSum(bool isInFavor) {
-    uint256 totalPre = totalVotes();
-    uint256 inFavorPre = votesInFavor();
-    uint256 againstPre = votesAgainst();
+rule totalVotesIsSum(env e) {
+    require votesInFavor() + votesAgainst() == totalVotes();
 
-    require inFavorPre + againstPre == to_mathint(totalPre);
-
-    env e;
+    bool isInFavor;
     vote(e, isInFavor);
 
-    uint256 totalPost = totalVotes();
-    uint256 inFavorPost = votesInFavor();
-    uint256 againstPost = votesAgainst();
     assert (
-        inFavorPost + againstPost == to_mathint(totalPost),
+        votesInFavor() + votesAgainst() == totalVotes(),
         "totalVotes is sum of in favor and against"
     );
 }
@@ -29,4 +22,4 @@ rule totalVotesIsSum(bool isInFavor) {
 
 /// @title Total votes is sum of in favor and against
 invariant totalVotesIsSumInvariant()
-    votesInFavor() + votesAgainst() == to_mathint(totalVotes());
+    votesInFavor() + votesAgainst() == totalVotes();

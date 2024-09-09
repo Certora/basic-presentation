@@ -20,7 +20,7 @@ contract Voting {
         if (isInFavor) {
             votesInFavor += 1;
         } else {
-            votesAgainst = 1;  // NOTE: injected bug
+            votesAgainst = 1;
         }
     }
 }

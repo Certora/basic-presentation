@@ -7,16 +7,13 @@ methods {
 }
 
 /// @title Total votes is sum of in favor and against - wrong rule
-rule totalVotesIsSumWrong(bool isInFavor) {
+rule totalVotesIsSumWrong(env e) {
 
-    env e;
+    bool isInFavor;
     vote(e, isInFavor);
 
-    uint256 totalPost = totalVotes();
-    uint256 inFavorPost = votesInFavor();
-    uint256 againstPost = votesAgainst();
     assert (
-        inFavorPost + againstPost == to_mathint(totalPost),
+        votesInFavor() + votesAgainst() == totalVotes(),
         "totalVotes is sum of in favor and against"
     );
 }

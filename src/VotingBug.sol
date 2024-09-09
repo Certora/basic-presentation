@@ -16,7 +16,7 @@ contract Voting {
         require(!hasVoted[msg.sender]);
         hasVoted[msg.sender] = true;
 
-        totalVotes = 1;  // NOTE: injected bug
+        totalVotes = 1;
         if (isInFavor) {
             votesInFavor += 1;
         } else {
